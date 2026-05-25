@@ -1,2 +1,38 @@
-# facrnn
-A Factorized Low-Rank RNN Framework for Uncovering Independent Neural Latent Dynamics and Connectivity
+# A Factorized Low-Rank RNN Framework for Uncovering Independent Neural Latent Dynamics and Connectivity [ICML 2026 Spotlight]
+
+<div align='center' >Chengrui Li, Yunmiao Wang, Yule Wang, Weihan Li, Dieter Jaeger and Anqi Wu</div>
+
+[[paper]](https://openreview.net/pdf?id=QvIbmX9jBr) [[arXiv]](https://arxiv.org/abs/2511.13899) [[slides]]() [[video]]() [[poster]]() [[文章]]()
+
+![divergence3](/assets/divergence3.png)
+
+## 1 Tutorial
+[demo.ipynb](/demo.ipynb) is a step-by-step tutorial that run VI or VIS on a toy mixture model.
+
+## 2 Paper's Results Reproduction
+For example, consider the toy mixture model in our paper.
+
+Go to the folder `mixture`. No installation is needed.
+
+Create three folders in `mixture`: `model`, `np`, and `csv`.
+
+Run `main.py` with different `idx` ranging from 0 to 39.
+
+```
+python main.py [idx]
+```
+
+This `idx` specifies the `method` and the random `seed` via
+```
+method_list = ['VI', 'CHIVI', 'VBIS', 'VIS']
+seed_list = np.arange(10)
+
+arg_index = np.unravel_index(args.idx, (len(method_list), len(seed_list)))
+method, seed = method_list[arg_index[0]], seed_list[arg_index[1]]
+```
+
+The learned model $p(x,z;\theta)$ and $q(z|x;\phi)$ are saved in `model`. The learning curves are saved in `np`. The quantitative results are saved in `csv`.
+
+Open the `visualization.ipynb`. This jupyter notebook plots Fig. 2 in our paper.
+
+![](assets/mixture.png)
