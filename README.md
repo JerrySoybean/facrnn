@@ -4,7 +4,7 @@
 
 [[paper]](https://openreview.net/pdf?id=QvIbmX9jBr) [[arXiv]](https://arxiv.org/abs/2511.13899) [[slides]]() [[video]]() [[poster]]() [[文章]]()
 
-![divergence3](/assets/divergence3.png)
+![schematic](/assets/schematic.pdf)
 
 ## 1 Tutorial
 [demo.ipynb](/demo.ipynb) is a step-by-step tutorial that run VI or VIS on a toy mixture model.
